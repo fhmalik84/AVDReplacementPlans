@@ -240,7 +240,7 @@ var varAppServicePlanName = '${FunctionAppName}-asp'
 //------ Resources ------//
 
 // Deploy Storage Account
-resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
+resource storageAccount 'Microsoft.Storage/storageAccounts@2026-04-01' = {
   name: StorageAccountName
   location: Location
   kind: 'StorageV2'
@@ -253,7 +253,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
 }
 
 // Deploy Log Analytics Workspace
-resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2021-06-01' = {
+resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2025-07-01' = {
   name: LogAnalyticsWorkspaceName
   location: Location
   properties: {
@@ -265,7 +265,7 @@ resource logAnalyticsWorkspace 'Microsoft.OperationalInsights/workspaces@2021-06
 }
 
 // Deploy App Service Plan
-resource appServicePlan 'Microsoft.Web/serverfarms@2022-03-01' = {
+resource appServicePlan 'Microsoft.Web/serverfarms@2025-03-01' = {
   name: varAppServicePlanName
   location: Location
   sku: {
@@ -288,7 +288,7 @@ resource appInsights 'Microsoft.Insights/components@2020-02-02' = {
 }
 
 // Create ReplaceSessionHost function with Managed System Identity (MSI)
-resource functionApp 'Microsoft.Web/sites@2022-03-01' = {
+resource functionApp 'Microsoft.Web/sites@2025-03-01' = {
   name: FunctionAppName
   location: Location
   kind: 'functionApp'
@@ -300,13 +300,13 @@ resource functionApp 'Microsoft.Web/sites@2022-03-01' = {
     serverFarmId: appServicePlan.id
     siteConfig: {
       use32BitWorkerProcess: false
-      powerShellVersion: '7.2'
+      powerShellVersion: '7.6'
       netFrameworkVersion: 'v6.0'
       appSettings: varFunctionAppSettings
       ftpsState: 'Disabled'
     }
   }
-  resource deployFromZip 'extensions@2022-03-01' = {
+  resource deployFromZip 'extensions@2025-03-01' = {
     name: 'MSDeploy'
     properties: {
       packageUri: FunctionAppZipUrl
