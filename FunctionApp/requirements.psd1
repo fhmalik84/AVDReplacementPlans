@@ -5,9 +5,9 @@
     # For latest supported version, go to 'https://www.powershellgallery.com/packages/Az'.
     # To use the Az module in your function app, please uncomment the line below.
     'AzureFunctionConfiguration'                   = "1.*"
-    'Az.Resources'                                 = '6.*'
-    'Az.DesktopVirtualization'                     = '3.*'
-    'Az.Compute'                                   = '5.*'
+    'Az.Resources'                                 = '10.*'
+    'Az.DesktopVirtualization'                     = '6.*'
+    'Az.Compute'                                   = '11.*'
     'PSFramework'                                  = '1.*'
-    'Microsoft.Graph.Identity.DirectoryManagement' = '1.*'
+    'Microsoft.Graph.Identity.DirectoryManagement' = '2.*'
 }
