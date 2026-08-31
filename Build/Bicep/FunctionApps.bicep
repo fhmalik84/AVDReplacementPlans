@@ -35,7 +35,7 @@ param SessionHostResourceGroupName string = ''
 param HostPoolName string
 
 @description('Required: No | URL of the FunctionApp.zip file. This is the zip file containing the Function App code. | Default: The latest release of the Function App code.')
-param FunctionAppZipUrl string = 'https://github.com/WillyMoselhy/AVDReplacementPlans/releases/download/v0.1.5/FunctionApp.zip'
+param FunctionAppZipUrl string = 'https://github.com/fhmalik84/AVDReplacementPlans/releases/download/v0.2.2/FunctionApp.zip'
 
 @description('Required: No | If true, will apply tags for Include In Auto Replace and Deployment Timestamp to existing session hosts. This will not enable automatic deletion of existing session hosts. | Default: True.')
 param FixSessionHostTags bool = true
